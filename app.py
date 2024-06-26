@@ -25,6 +25,11 @@ class RiskOneApi:
         self.origins = [
             "http://localhost:3000",  # React default port
             "http://localhost:3005",  # Your React app's port
+            "http://0.0.0.0:3000",  # React default port
+            "http://0.0.0.0:3005",  # Your React app's port
+            "http://16.162.240.195:3000",  # React default port
+            "http://16.162.240.195:3005",  # Your React app's port
+
         ]
         self.app.add_middleware(
             CORSMiddleware,
