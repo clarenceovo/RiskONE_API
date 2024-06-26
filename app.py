@@ -23,19 +23,19 @@ class RiskOneApi:
         self.setup_routes()
         self.app.include_router(self.router)
         self.origins = [
-            "http://localhost:3000",  # React default port
-            "http://localhost:3005",  # Your React app's port
-            "http://0.0.0.0:3000",  # React default port
-            "http://0.0.0.0:3005",  # Your React app's port
-            "http://16.162.240.195:3000",  # React default port
-            "http://16.162.240.195:3005",  # Your React app's port
+            "http://localhost:3000",
+            "http://localhost:3005",
+            "http://0.0.0.0:3000",
+            "http://0.0.0.0:3005",
+            "http://16.162.240.195:3000",
+            "http://16.162.240.195:3005",
 
         ]
         self.app.add_middleware(
             CORSMiddleware,
             allow_origins=self.origins,  # Allows specified origins
             allow_credentials=True,
-            allow_methods=["*"],  # Allows all methods
+            allow_methods=["GET"],  # Allows all methods
             allow_headers=["*"],  # Allows all headers
         )
     def setup_routes(self):
