@@ -1,0 +1,7 @@
+{
+    "host":"histdata.c3o36qtx0jbm.ap-northeast-1.rds.amazonaws.com",
+    "user":"admin",
+    "password":"96854233",
+    "database":"crypto_data"
+
+}
