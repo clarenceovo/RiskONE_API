@@ -67,9 +67,16 @@ class RiskOneApi:
         def get_hist_order_record():
             ret = self.db_record_client.get_record(50)
             return (ret)
+
+        @self.router.get('/last24hourStat')
+        def get_last24hour_stat():
+            ret = self.db_record_client.get_okx_last24hour_stat()
+            return (ret)
+
     def run(self):
         import uvicorn
         uvicorn.run(self.app, host="0.0.0.0", port=self.config['port'], log_level="info")
+
 if __name__ == "__main__":
     app = RiskOneApi()
     app.run()

@@ -19,8 +19,5 @@ class binance_api_handler(BaseApiHander):
 
     def get_balance_usd(self):
         balance = self.client.futures_account_balance()
-        usd_balance = 0
-        for item in balance:
-            if item['asset'] == 'USDT':
-                usd_balance += float(item['balance'])
-        return usd_balance
+        ret = self.client.futures_account()
+        return ret['totalWalletBalance']

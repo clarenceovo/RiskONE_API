@@ -30,9 +30,12 @@ class risk_api_handler(BaseHandler):
 
     def get_account_balance(self):
         data = {}
+        total = 0
         for exchange in self.api_client.keys():
-            data[exchange]= self.api_client[exchange].get_balance_usd()
-
+            balance = self.api_client[exchange].get_balance_usd()
+            data[exchange] = balance
+            total += float(balance)
+        data['total'] = total
         return self.to_api_response(data)
 
     def get_okx_live_orders(self):
